@@ -1,13 +1,23 @@
-function Login() {
-    return (
+
+import { Button } from "@/components/ui/button"
+import Cat from "@/components/Cat"
+
+export default function Login() {  
+    
+    return( 
         <div>
-            <h1> Login page</h1>
-            <div>
-                <label htmlFor="username">Username:</label>
-                <input className="w-50 h-5 p-5 placeholder:text-red-300 ring-2 ring-blue-500 rounded-full" type="text" id="username" name="username" placeholder="Enter your username"/>
+            <h1 className="size-24 text-red-500"> 
+            LOGIN PAGE
+            </h1>
+            <div className="size-64">
+                <Cat />
             </div>
+            <Button variant="default" className="bg-blue-500 text-white hover:bg-blue-600">
+                Login
+            </Button>
+            
+            
         </div>
     )
 }
 
-export default Login
