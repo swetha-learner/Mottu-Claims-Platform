@@ -4,7 +4,7 @@ import Claims from './pages/Claims';
 import Create_claim from './pages/Create_claim';
 import Dashboard from './pages/Dashboard';
 
-function App() {
+const App = () => {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />

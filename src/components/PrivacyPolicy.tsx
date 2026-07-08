@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import {
   Dialog,
   DialogContent,
@@ -6,27 +6,17 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-export default function Login() {
-  const [openPolicy, setOpenPolicy] = useState(false);
+interface PrivacyPolicyProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
 
+const PrivacyPolicy = ({ 
+      open, onOpenChange 
+    }: PrivacyPolicyProps) => {
   return (
     <>
-      <label className="flex items-center gap-2 text-sm text-white">
-        <input type="checkbox" />
-
-        <span>
-          I have read and agree to the{" "}
-          <button
-            type="button"
-            onClick={() => setOpenPolicy(true)}
-            className="text-blue-300 underline hover:text-blue-200"
-          >
-            Privacy Policy
-          </button>
-        </span>
-      </label>
-
-      <Dialog open={openPolicy} onOpenChange={setOpenPolicy}>
+      <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent className="max-w-2xl rounded-2xl">
           <DialogHeader>
             <DialogTitle>Privacy Policy</DialogTitle>
@@ -34,7 +24,7 @@ export default function Login() {
 
           <div className="max-h-[60vh] overflow-y-auto space-y-4 text-sm text-gray-600">
             <p>
-              Your privacy is important to us. This application collects only
+              Your privacy is important to us. This application built only for knowledge purposes and collects only
               the information necessary to authenticate users and provide claim
               management services.
             </p>
@@ -46,7 +36,7 @@ export default function Login() {
 
             <p>
               By continuing, you acknowledge that you have read and accepted
-              this Privacy Policy.
+              this Privacy Policy and <b> You are going to HIRE ME.</b>
             </p>
           </div>
         </DialogContent>
@@ -54,3 +44,5 @@ export default function Login() {
     </>
   );
 }
+
+export default PrivacyPolicy;
