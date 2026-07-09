@@ -1,4 +1,4 @@
-function Claims(){
+const Claims = () => {
     return(
         <div>
             <h1> Hello Claim!</h1>

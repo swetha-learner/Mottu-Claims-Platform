@@ -1,4 +1,4 @@
-function Create_claim(){
+const Create_claim = () => {
     return(
         <div>
             <h1> Hello Create claim!</h1>
